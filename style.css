@@ -1,0 +1,257 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 50px;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+.navigation li {
+    font-family: 'Rollbox', sans-serif;
+    font-size: large;
+    color: white;
+    cursor: pointer;
+    transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.navigation > li {
+    position: relative;
+}
+
+.navigation > li:hover {
+  color: white;
+  text-shadow: 0 0 5px #FF8888, 0 0 10px #FF8888, 0 0 15px #FF8888;
+}
+
+.drop-menu {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.drop-menu li {
+  padding: 8px 20px;
+  white-space: nowrap;
+  transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.navigation > li:hover > .drop-menu {
+  display: block;
+}
+
+.drop-menu li:hover {
+  background-color: darkslategray;
+  color: white;
+  text-shadow: 0 0 5px #FF8888, 0 0 10px #FF8888, 0 0 15px #FF8888;
+}
+
+h1.xas-container {
+  position: relative;
+  z-index: 1;
+  font-family: 'Rollbox', sans-serif;
+  font-size: 150px;
+  text-align: center;
+  color: white;
+  margin-top: 225px;
+}
+
+img#gallery {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+.xas-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 225px;
+}
+
+.xas-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: 'Rollbox', sans-serif;
+  font-size: 150px;
+  color: white;
+}
+
+.xas-text {
+  transition: transform 1s ease;
+  padding-top: 15px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.xas-full {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(40px);
+  display: flex;
+  flex-direction: column;
+  font-size: 50px;
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  transition: opacity 1s ease, transform 1s ease, visibility 1s ease;
+  text-shadow: none;
+}
+
+.xas-container:hover .xas-text {
+  transform: translateX(-300px);
+  text-shadow: 0 0 4px #FF8888, 0 0 4px #FF8888, 0 0 7px #FF8888;
+}
+
+.xas-container:hover .xas-full {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-70px);
+  text-shadow: 0 0 4px #FF8888, 0 0 4px #FF8888, 0 0 7px #FF8888;
+}
+
+.gallery-heading {
+  position: relative;        
+  z-index: 1;               
+  color: white;         
+  text-align: center;
+  margin-top: 350px; 
+  margin-bottom: 0;       
+  font-size: 40px;
+  font-family: 'Rollbox', sans-serif;
+}
+
+.gallery-heading::after, .event-heading::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 150px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.gallery {
+  width: 90vw;
+  margin: auto;
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.gallery img {
+  width: 20vw;
+  height: 180px;
+  margin: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+h2.event-heading {
+  position: relative; 
+  z-index: 1;            
+  color: white;             
+  text-align: center;
+  margin-top: 150px; 
+  margin-bottom: 100px;        
+  font-size: 40px;
+  font-family: 'Rollbox', sans-serif;
+}
+
+.event-container {
+  width: 75vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.card > img {
+  width: 25vw;
+  height: 230px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card {
+  margin: 15px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-family: 'Rollbox', sans-serif;
+}
+
+.card > h3, h4, p {
+  padding: 15px;
+  text-align: justify;
+}
+
+.card h3, .card h4, .card p {
+  margin: 3px 4px;
+}
+
+.card h3 {
+  font-size: 30px;
+}
+
+.card h4 {
+  font-size: 15px;
+  color: lightgray;
+}
+
+.card:hover {
+  transform: translateY(-10px) translateZ(5px) scale(1.02);
+  transition: 0.4s ease-in-out;
+  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  margin-top: 80px;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer p {
+  font-family: 'Rollbox', sans-serif;
+  text-align: center;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+@font-face {
+    font-family: 'Rollbox';
+    src: url('fonts/RollboxRegular-jE2lv.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
