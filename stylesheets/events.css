@@ -41,9 +41,10 @@ header {
     margin-inline: 10%;
     display: block;
     font-size: 2em;
-    color: #A9A3ff;
-    padding-block: 5em;
-    text-shadow: -5px 3px 0.5rem rgb(160, 2, 190);
+
+    padding-block: 6em;
+
+    color: white;
 }
 
 .liner {
@@ -61,14 +62,21 @@ footer {
 
 .event {
     width: 30%;
-    margin: 10px;
+    margin: 20px;
     border-radius: 5px;
     border: 2px solid white;
-    background: lavender;
+    background: rgba(50, 35, 160, 0.5);
     transition: transform 0.3s ease;
+    color: lavender;
 }
 
-@media (min-width: 320px) and (max-width: 800px) {
+@media (min-width: 900px) and (max-width: 1000px) {
+    .event {
+        margin: 10px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 900px) {
     .event {
         width: 100%;
     }
@@ -76,7 +84,7 @@ footer {
 
 .event:hover {
     transform: scale(110%);
-    text-shadow: 2px 2px 5px white;
+    background: rgba(50, 35, 160, 0.7);
     filter: drop-shadow(0 0 0.98rem #A9A3ff);
 }
 
@@ -91,7 +99,7 @@ footer {
 
 .time {
     font-size: 1em;
-    color: gray;
+    color: lightgray;
     margin-bottom: 10px;
 }
 
@@ -100,6 +108,7 @@ footer {
 }
 
 .hero-back {
-    background: url(/images/background.jpg);
-    backdrop-filter: blur(3px);
+    background: url(/images/background-events.jpeg);
+    background-size: 100% auto;
+    background-position: -50%;
 }
