@@ -51,6 +51,7 @@ header {
 }
 
 footer {
+    margin: 0px;
     font-size: 1.1em;
     padding-block: 1em;
     padding-inline: 1em;
