@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('/stylesheets/common.css');
 
-* {
-    font-family: "Merriweather", serif;
+html {
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
@@ -14,9 +13,16 @@ body {
 }
 
 .boddery {
-    margin-inline: 10%;
-    background: white;
+    padding-inline: 7%;
     padding-top: 30px;
+
+    background: radial-gradient(ellipse,
+    #05040e 0%, 
+    #0a0618 25%, 
+    #0f081f 50%,  
+    #140a2a 70%, 
+    #1a1033 85%, 
+    #2e1c50 100%);
 }
 
 main {
@@ -28,36 +34,49 @@ main {
 
 h1 {
 margin: 0px;
+padding: 0px;
 }
 
 header {
+    margin-inline: 10%;
     display: block;
     font-size: 2em;
-    margin-inline: 10%;
+    color: #A9A3ff;
+    padding-block: 5em;
+    text-shadow: -5px 3px 0.5rem rgb(160, 2, 190);
 }
 
 .liner {
     margin-bottom: 20px;
-    border-bottom: 1px solid black;
 }
 
 footer {
-    padding-inline: 10%;
-    padding-block: 5%;
-    background: #f0bdff;
+    font-size: 1.1em;
+    padding-block: 1em;
+    padding-inline: 1em;
+    background: black;
+    text-align: center;
 }
 
 .event {
-    width: 20%;
+    width: 30%;
     margin: 10px;
     border-radius: 5px;
-    border: 2px solid black;
-    background: white;
+    border: 2px solid white;
+    background: lavender;
     transition: transform 0.3s ease;
 }
 
+@media (min-width: 320px) and (max-width: 800px) {
+    .event {
+        width: 100%;
+    }
+}
+
 .event:hover {
-    transform: scale(120%);
+    transform: scale(110%);
+    text-shadow: 2px 2px 5px white;
+    filter: drop-shadow(0 0 0.98rem #A9A3ff);
 }
 
 .cover img {
@@ -70,11 +89,16 @@ footer {
 }
 
 .time {
-    font-size: 0.8em;
+    font-size: 1em;
     color: gray;
     margin-bottom: 10px;
 }
 
 .rest {
     padding: 10px;
+}
+
+.hero-back {
+    background: url(/images/background.jpg);
+    backdrop-filter: blur(3px);
 }
