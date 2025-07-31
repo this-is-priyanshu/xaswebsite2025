@@ -156,7 +156,7 @@ img#gallery {
 }
 
 .xas-container:hover .xas-text {
-  transform: translateX(-300px);
+  transform: translateX(-150px);
   text-shadow: 0 0 4px #FF8888, 0 0 4px #FF8888, 0 0 7px #FF8888;
 }
 
