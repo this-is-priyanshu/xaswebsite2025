@@ -1,11 +1,17 @@
-const can = document.getElementById('can');
+let can = document.getElementById('can');
 const gl  = can.getContext('webgl2'); 
 
 function resize() {
-	can.width = window.innerWidth;
-	can.height = window.innerHeight;
 
-	gl.viewport(0, 0, can.width, can.height);
+    can = document.getElementById('can');
+
+    if(can != null)
+    {
+        can.width = window.innerWidth;
+        can.height = window.innerHeight;
+
+        gl.viewport(0, 0, can.width, can.height);
+    }
 }
 
 function draw(dt, obj) {
