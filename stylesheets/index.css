@@ -6,7 +6,8 @@ html, body {
   display: flex;
   flex-direction: column;
 
-  font-family: 'Rollbox', sans-serif;
+  font-family: 'Roxbrough CF', sans-serif;
+  font-weight: bold;
 }
 
 @font-face {
@@ -16,13 +17,25 @@ html, body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roxbrough CF';
+    src: url('/fonts/roxborough-cf-regular_freefontdownload_org/roxborough-cf-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .navigation-container {
     display: flex;
     justify-content: space-between;
     padding-inline: 7em;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px) brightness(30%);
     position:relative;
     z-index: 5;
+}
+
+.navigation-container a {
+    text-decoration: none;
+    color: white;
 }
 
 .navigation-container img {
