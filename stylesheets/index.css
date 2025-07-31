@@ -24,6 +24,14 @@ html, body {
     font-style: normal;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0 0 5px #FF8888, 0 0 10px #FF8888, 0 0 15px #FF8888;
+}
+
 .navigation-container {
     display: flex;
     justify-content: space-between;
