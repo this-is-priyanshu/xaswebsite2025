@@ -1,86 +1,79 @@
 <!doctype html>
+
 <html>
     <head>
-		<title>RESEARCH</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="stylesheets/latex.css">
-        <style>
-* {
-    text-align: justify;
-}
-
-img {
-    width: 50%;
-    margin: auto;
-}
-
-figure {
-    text-align: center;
-}
-
-figcaption {
-    text-align: center;
-}
-
-body {
-    background: radial-gradient(ellipse,
-        #05040e 0%, 
-        #0a0618 25%, 
-        #0f081f 50%,  
-        #140a2a 70%, 
-        #1a1033 85%, 
-        #2e1c50 100%);
-}
-        </style>
+        <title>Research</title>
+        <meta name=viewport value='width=device-width;initial-scale=1.0'>
+        <link href='/stylesheets/research.css' rel=stylesheet>
     </head>
-    <body class='latex-dark'>
-        <h1>Research</h1>
-        <div class='abstract'>
-            <p>XAS has always been research-focused, serving as a platform for students to explore, learn, and expand their knowledge through hands-on projects. Research has been a core aspect of XAS since its inception, ranging from small undergraduate projects to full-scale research papers. XAS takes pride in fostering a strong culture of active teaching, learning, and research, empowering students to engage deeply with their fields of study, in this case primarily Astrophysics, Space Science, Cosmology and their related studies. </p>
+    <body>
+        <div class=hero-back>
+            <nav class='navigation-container'>
+                <a href="/index.html"><img src=/images/xas.png></a>
+                <ul class="navigation">
+                    <li>About Us</li>
+                    <a href='/events.html'><li>Events</li></a>
+                    <li class="submenu">Activities
+                        <ul class="drop-menu">
+                            <a href='/research.html'><li>Research</li></a>
+                            <li>Resources</li>
+                            <li>Astroblogs</li>
+                        </ul>
+                    </li>
+                    <li>FELO</li>
+                </ul>
+            </nav>
+            <div style="backdrop-filter: blur(5px);">
+                <header>
+                    <h1>Research</h1>
+                    <p>XAS has always been research-focused, serving as a platform for students to explore, learn, and expand their knowledge through hands-on projects. Research has been a core aspect of XAS since its inception, ranging from small undergraduate projects to full-scale research papers. XAS takes pride in fostering a strong culture of active teaching, learning, and research, empowering students to engage deeply with their fields of study, in this case primarily Astrophysics, Space Science, Cosmology and their related studies.</p>
+                </header>
+            </div>
         </div>
-        <nav class='toc'>
-            <h2><u>Contents</u></h2>
-            <ol>
-                <li>
-                    <a href='#a'>Published Research Papers</a>
-                    <ol>
-                        <li><a href='#b'>Shining Bright: AI-Driven Classification of Stars, Galaxies, and Quasars</a></li>
-                        <li><a href='#c'>A multiresolution approach to enhance small telescope data under non-ideal conditions</a></li>
-                        <li><a href='#d'>Arduino-based high-frequency radio telescope and observations</a></li>
-                    </ol>
-                </li>
-                <li> <a href='#e'>Students Research Projects</a> </li>
-            </ol>
-        </nav>
-        <h2 id=a><u>Published Research Papers</u></h2>
-        <p> </p>
 
-        <h3 id=b>1.1 Shining Bright: AI-Driven Classification of Stars, Galaxies, and Quasars </h3>
-        <p>Stars, galaxies, and quasars are crucial celestial objects that help us understand the universe. While stars are luminous plasma spheres, galaxies are vast systems of stars, gas, and dark matter, and quasars are extremely bright, distant objects. Large surveys like the Sloan Digital Sky Survey (SDSS) catalog these objects, but traditional classification is laborious. This paper uses supervised machine learning and neural networks to classify objects based on SDSS data. Our dense neural network yielded the best results in terms of accuracy and speed, with decision-tree-based methods outperforming others. </p>
-        <br>
-        <figure>
-            <img src='/images/res1.png'>
-            <figcaption>Shining Bright: AI-Driven Classification of Stars, Galaxies, and Quasars </figcaption>
-        </figure>
+        <div class='boddery'>
 
-        <h3 id=c>1.2 A multiresolution approach to enhance small telescope data under non-ideal conditions</h3>
-        <p>Astronomical imaging of star clusters is key to understanding stellar evolution and dynamics. This paper introduces a wavelet-based technique to denoise star cluster data, specifically NGC 2301, captured over five nights from Fr. Eugene Lafont Observatory. Conventional methods like dark frame subtraction are ineffective for heavily noise-infested images. Our approach uses an undecimated wavelet transform with a modified thresholding process to improve image quality. Daophot II shows a significant increase in detected stars using our method, with counts rising from 397–903 (red), 663–945 (green), and 362–896 (blue).</p>
-        <br>
-        <figure>
-            <img src='/images/res2.png'>
-            <figcaption>Shining Bright: AI-Driven Classification of Stars, Galaxies, and Quasars </figcaption>
-        </figure>
+            <div class=liner></div>
 
-        <h3 id=d>1.3 Arduino-based high-frequency radio telescope and observations</h3>
-        <p>This pilot project, led by UG and PG students of the Physics Department at St. Xavier’s College (Autonomous), Kolkata, supervised by Dr. Suparna Roychowdhury, Dr. Shibaji Banerjee, and Mr. Bappaditya Manna of FELO, developed a low-cost, Arduino-based high-frequency radio telescope (12-18 GHz). The telescope successfully detected geostationary and non-geostationary satellites, proving its effectiveness despite operating in urban areas with significant Radio Frequency Interference (RFI). The system offers an affordable way for students to explore radio astronomy, with future plans to expand into interferometric observations.</p>
-        <br>
-        <figure>
-            <img src='/images/res3.png'>
-            <figcaption>Shining Bright: AI-Driven Classification of Stars, Galaxies, and Quasars </figcaption>
-        </figure>
+            <main>
+                <h2 class="heading-1">Published Research Papers</h2>
+                <br>
+                <div class="papers">
+                    <h2 class="paper-heading">1.1 Shining Bright: AI-Driven Classification of Stars, Galaxies, and Quasars</h2>
+                    <p class="paper-abstract">Stars, galaxies, and quasars are crucial celestial objects that help us understand the universe. While stars are luminous plasma spheres, galaxies are vast systems of stars, gas, and dark matter, and quasars are extremely bright, distant objects. Large surveys like the Sloan Digital Sky Survey (SDSS) catalog these objects, but traditional classification is laborious. This paper uses supervised machine learning and neural networks to classify objects based on SDSS data. Our dense neural network yielded the best results in terms of accuracy and speed, with decision-tree-based methods outperforming others.</p>
+                    <br>
+                    <figure>
+                        <img src='/images/res1.png' alt="">
+                        <figcaption><u>Figure 1.</u> Shining Bright: AI-Driven Classification of Stars, Galaxies, and Quasars</figcaption>
+                    </figure>
+                    <br><br><br>
+                    <h2 class="paper-heading">1.2 A multiresolution approach to enhance small telescope data under non-ideal conditions</h2>
+                    <p class="paper-abstract">Astronomical imaging of star clusters is key to understanding stellar evolution and dynamics. This paper introduces a wavelet-based technique to denoise star cluster data, specifically NGC 2301, captured over five nights from Fr. Eugene Lafont Observatory. Conventional methods like dark frame subtraction are ineffective for heavily noise-infested images. Our approach uses an undecimated wavelet transform with a modified thresholding process to improve image quality. Daophot II shows a significant increase in detected stars using our method, with counts rising from 397–903 (red), 663–945 (green), and 362–896 (blue).</p>
+                    <br>
+                    <figure>
+                        <img src='/images/res2.png' alt="">
+                        <figcaption><u>Figure 2.</u> A multiresolution approach to enhance small telescope data under non-ideal conditions</figcaption>
+                    </figure>
+                    <br><br><br>
+                    <h2 class="paper-heading">1.3 Arduino-based high-frequency radio telescope and observations</h2>
+                    <p class="paper-abstract">This pilot project, led by UG and PG students of the Physics Department at St. Xavier’s College (Autonomous), Kolkata, supervised by Dr. Suparna Roychowdhury, Dr. Shibaji Banerjee, and Mr. Bappaditya Manna of FELO, developed a low-cost, Arduino-based high-frequency radio telescope (12-18 GHz). The telescope successfully detected geostationary and non-geostationary satellites, proving its effectiveness despite operating in urban areas with significant Radio Frequency Interference (RFI). The system offers an affordable way for students to explore radio astronomy, with future plans to expand into interferometric observations.</p>
+                    <br>
+                    <figure>
+                        <img src='/images/res3.png' alt="">
+                        <figcaption><u>Figure 3.</u> Arduino-based high-frequency radio telescope and observations</figcaption>
+                    </figure>
+                </div>
 
-        <h2 id=e><u>Students Research Projects</u></h2>
-        <p> The Father Eugene Lafont Observatory facilitated several research projects for students under the Xaverian Astronomical Society (XAS), allowing them to explore both Observational Astronomy and Computational Astrophysics. These projects highlight the commitment of students to further their understanding of complex astronomical phenomena. From May to December 2023, the Father Eugene Lafont Observatory facilitated several projects under the Xaverian Astronomical Society (XAS) focusing on Observational Astronomy and Computational Astrophysics. Students were given the chance to observe solar flares, construct an Arduino-based radio telescope, and study urban light pollution in Kolkata. Analysis of aerosol data with a sun photometer and the atmospheric extinction coefficient’s impact on the solar spectrum were a few more options that students were given to work on. In Computational Astrophysics, projects included cosmological model constraining using Bayesian inference and analyzing gravitational wave data. The XAS research projects demonstrate the society's commitment to fostering a robust learning environment. Through these observational and computational projects, students gained practical skills and contributed meaningfully to the broader field of astronomy and astrophysics.  </p>
+                <h2 class="heading-2">Students Research Projects</h2>
+                <div class="papers">
+                    <p class="paper-abstract">The Father Eugene Lafont Observatory facilitated several research projects for students under the Xaverian Astronomical Society (XAS), allowing them to explore both Observational Astronomy and Computational Astrophysics. These projects highlight the commitment of students to further their understanding of complex astronomical phenomena. From May to December 2023, the Father Eugene Lafont Observatory facilitated several projects under the Xaverian Astronomical Society (XAS) focusing on Observational Astronomy and Computational Astrophysics. Students were given the chance to observe solar flares, construct an Arduino-based radio telescope, and study urban light pollution in Kolkata. Analysis of aerosol data with a sun photometer and the atmospheric extinction coefficient’s impact on the solar spectrum were a few more options that students were given to work on. In Computational Astrophysics, projects included cosmological model constraining using Bayesian inference and analyzing gravitational wave data. The XAS research projects demonstrate the society's commitment to fostering a robust learning environment. Through these observational and computational projects, students gained practical skills and contributed meaningfully to the broader field of astronomy and astrophysics.</p>
+                </div>
+            </main>
+
+            <div style='height: 100px'></div>
+        </div>
+        <footer>
+			<p>2025 Xaverian Astronomical Society.</p>
+		</footer>
     </body>
 </html>
