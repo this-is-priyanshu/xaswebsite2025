@@ -1,0 +1,138 @@
+@import url('/stylesheets/common.css');
+
+html {
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+body {
+    margin: 0px;
+}
+
+.boddery {
+    padding-inline: 7%;
+    padding-top: 30px;
+
+    background: radial-gradient(ellipse,
+    #05040e 0%, 
+    #0a0618 25%, 
+    #0f081f 50%,  
+    #140a2a 70%, 
+    #1a1033 85%, 
+    #2e1c50 100%);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1 {
+margin: 0px;
+padding: 0px;
+}
+
+header {
+    margin-inline: 10%;
+    display: block;
+    font-size: 2em;
+
+    padding-block: 6em;
+
+    color: white;
+}
+
+.liner {
+    margin-bottom: 20px;
+}
+
+footer {
+    margin: 0px;
+    font-size: 1.1em;
+    padding-block: 1em;
+    padding-inline: 1em;
+    background: black;
+    text-align: center;
+}
+
+.hero-back {
+    background: url(/images/background-events.jpeg);
+    background-size: 100% auto;
+    background-position: -50%;
+}
+
+.heading-1, .heading-2 {
+  position: relative;        
+  z-index: 1;               
+  color: white;         
+  text-align: center;
+  margin-bottom: 0;       
+  font-size: 45px;
+}
+
+.heading-2 {
+    margin-top: 80px;
+}
+
+.heading-1::after, .heading-2::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 300px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.papers {
+    width: 100%;
+    margin-top: 20px;
+    color: white;
+}
+
+.paper-heading {
+    text-align: left;
+    z-index: 1;
+    font-size: 40px;
+}
+
+.paper-abstract {
+    font-size: 25px;
+    font-weight: normal;
+    text-align: justify;
+}
+
+figure {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+figure img {
+    width: 45vw;
+}
+
+footer p {
+  text-align: center;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 900px) {
+    header p {
+        font-size: 20px !important;
+        text-align: justify !important;
+        margin-top: 70px !important;
+    }
+}
