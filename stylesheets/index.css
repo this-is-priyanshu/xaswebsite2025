@@ -165,14 +165,14 @@ img#gallery {
 
 .xas-container:hover .xas-text {
   transform: translateX(-150px);
-  text-shadow: 0 0 4px #FF8888, 0 0 4px #FF8888, 0 0 7px #FF8888;
+  text-shadow: 0 0 4px goldenrod, 0 0 4px goldenrod, 0 0 7px goldenrod;
 }
 
 .xas-container:hover .xas-full {
   opacity: 1;
   visibility: visible;
   transform: translateY(-50%) translateX(-70px);
-  text-shadow: 0 0 4px #FF8888, 0 0 4px #FF8888, 0 0 7px #FF8888;
+  text-shadow: 0 0 4px goldenrod, 0 0 4px goldenrod, 0 0 7px goldenrod;
 }
 
 .gallery-heading {
