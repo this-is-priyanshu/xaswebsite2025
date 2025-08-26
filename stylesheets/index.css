@@ -36,6 +36,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     padding-inline: 7em;
+    padding-top: 0;
     backdrop-filter: blur(5px) brightness(30%);
     position:relative;
     z-index: 5;
@@ -164,14 +165,14 @@ img#gallery {
 }
 
 .xas-container:hover .xas-text {
-  transform: translateX(-150px);
+  transform: translateX(-250px);
   text-shadow: 0 0 4px goldenrod, 0 0 4px goldenrod, 0 0 7px goldenrod;
 }
 
 .xas-container:hover .xas-full {
   opacity: 1;
   visibility: visible;
-  transform: translateY(-50%) translateX(-70px);
+  transform: translateY(-50%) translateX(-50px);
   text-shadow: 0 0 4px goldenrod, 0 0 4px goldenrod, 0 0 7px goldenrod;
 }
 
@@ -184,11 +185,23 @@ img#gallery {
   font-size: 40px;
 }
 
-.gallery-heading::after, .event-heading::after {
+.gallery-heading::after {
   content: "";
   display: block;
   margin: 10px auto 0;
-  width: 150px;
+  width: 100px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.event-heading::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 250px;
   height: 2px;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(4px);
@@ -289,9 +302,13 @@ footer p {
   letter-spacing: 2px;
 }
 
+footer .footer-top {
+  display: none;
+}
+
 @media (max-width: 800px) {
   body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
   }
 
   .navigation, .hamburger {
@@ -349,7 +366,6 @@ footer p {
 
   .gallery img {
     width: 83vw !important;
-    padding-left: 5px;
   }
 
   .event-container {
@@ -366,5 +382,46 @@ footer p {
 
   .card img {
     width: 80vw !important;
+  }
+
+  footer .footer-top {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .footer-menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 20px;
+    padding-left: 0;
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+
+  .footer-sub-menu {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .footer-sub-menu li {
+    color: gray !important;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 16px;
   }
 }
