@@ -48,7 +48,6 @@
 
 .navigation-container {
     display: flex;
-    padding-top: 10px;
     justify-content: space-between;
     padding-inline: 7em;
     backdrop-filter: blur(5px) brightness(30%);
@@ -62,7 +61,8 @@
 }
 
 .navigation-container img {
-    height: 70px;
+    height: 80px;
+    padding-bottom: 10px;
 }
 
 .navigation {
@@ -77,9 +77,11 @@
 
 .navigation li {
     font-size: large;
+    padding-top: 15px;
     color: white;
     cursor: pointer;
     transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+
 }
 
 .navigation > li {

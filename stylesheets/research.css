@@ -8,21 +8,24 @@ html {
     "wdth" 100;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0px;
+    background-color: #05040e;
+    color: white;
+    font-family: 'Roxbrough CF', serif;
 }
 
 .boddery {
-    padding-inline: 7%;
-    padding-top: 30px;
-
-    background: radial-gradient(ellipse,
-    #05040e 0%, 
-    #0a0618 25%, 
-    #0f081f 50%,  
-    #140a2a 70%, 
-    #1a1033 85%, 
-    #2e1c50 100%);
+    padding-inline: 10%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    /* Exact same radial glow as Events page */
+    background: radial-gradient(circle at top, #1a1033 0%, #05040e 75%);
 }
 
 main {
@@ -36,14 +39,44 @@ margin: 0px;
 padding: 0px;
 }
 
+.hero-back {
+    /* Uses the same vignette to blend the image into the background */
+    background: 
+        linear-gradient(to bottom, 
+            rgba(5, 4, 14, 0.7) 0%, 
+            transparent 30%, 
+            transparent 70%, 
+            rgba(5, 4, 14, 1) 100%),
+        url('/images/background-events.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60vh;
+    display: block; /* Ensures header stays at top */
+}
+
 header {
     margin-inline: 10%;
-    display: block;
-    font-size: 2em;
+    padding-top: 100px;
+    padding-bottom: 100px; /* Same spacing as Events */
+    text-align: left;
+}
 
-    padding-block: 6em;
+header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.8);
+}
 
-    color: white;
+header p {
+    font-family: 'Latin Modern', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #A9A3ff;
+    max-width: 900px;
 }
 
 .liner {
@@ -59,11 +92,6 @@ footer {
     text-align: center;
 }
 
-.hero-back {
-    background: url(/images/background-events.jpeg);
-    background-size: 100% auto;
-    background-position: -50%;
-}
 
 .heading-1, .heading-2 {
   position: relative;        
@@ -131,7 +159,7 @@ footer p {
 
 @media (max-width: 900px) {
     header p {
-        font-size: 20px !important;
+        font-size: 20px;
         text-align: justify !important;
         margin-top: 70px !important;
     }

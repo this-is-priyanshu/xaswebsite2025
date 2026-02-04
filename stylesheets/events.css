@@ -1,114 +1,187 @@
 @import url('/stylesheets/common.css');
 
-html {
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-variation-settings:
-    "wdth" 100;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0px;
+    background-color: #05040e;
+    color: white;
+    font-family: 'Roxbrough CF', serif;
 }
 
-.boddery {
-    padding-inline: 7%;
-    padding-top: 30px;
-
-    background: radial-gradient(ellipse,
-    #05040e 0%, 
-    #0a0618 25%, 
-    #0f081f 50%,  
-    #140a2a 70%, 
-    #1a1033 85%, 
-    #2e1c50 100%);
-}
-
-main {
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-h1 {
-margin: 0px;
-padding: 0px;
+/* --- KEEPING YOUR ORIGINAL HEADER STYLE --- */
+.hero-back {
+    /* Uses the same vignette to blend the image into the background */
+    background: 
+        linear-gradient(to bottom, 
+            rgba(5, 4, 14, 0.7) 0%, 
+            transparent 30%, 
+            transparent 70%, 
+            rgba(5, 4, 14, 1) 100%),
+        url('/images/background-events.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60vh;
+    display: block; /* Ensures header stays at top */
 }
 
 header {
     margin-inline: 10%;
-    display: block;
-    font-size: 2em;
-
-    padding-block: 6em;
-
-    color: white;
+    padding-top: 100px; /* Same spacing as Events */
+    text-align: left;
+    padding-bottom: 100px;
 }
 
-.liner {
-    margin-bottom: 20px;
+header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.8);
 }
 
-footer {
-    margin: 0px;
-    font-size: 1.1em;
-    padding-block: 1em;
-    padding-inline: 1em;
-    background: black;
-    text-align: center;
+header p {
+    font-family: 'Latin Modern', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #A9A3ff;
+    max-width: 900px;
 }
 
+/* --- UPDATED CARD AREA --- */
+.boddery {
+    padding-inline: 10%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    /* Exact same radial glow as Events page */
+    background: radial-gradient(circle at top, #1a1033 0%, #05040e 75%);
+}
+
+main {
+    display: grid;
+    /* Forces exactly 3 columns on large screens */
+    grid-template-columns: repeat(3, 1fr); 
+    /* Wide spacing between cards as requested */
+    gap: 60px; 
+    justify-content: center;
+}
+
+/* Responsive adjustments to maintain look on smaller screens */
+@media (max-width: 1200px) {
+    main { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+}
+@media (max-width: 768px) {
+    main { grid-template-columns: 1fr; }
+    .boddery { padding-inline: 5%; }
+}
+
+/* --- THE EVENT CARD --- */
 .event {
-    width: 30%;
-    margin: 20px;
-    border-radius: 5px;
-    border: 2px solid white;
-    background: rgba(50, 35, 160, 0.5);
-    transition: transform 0.3s ease;
-    color: lavender;
+    position: relative;
+    display: grid;
+    grid-template-areas: "stack";
+    height: 420px; 
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0a0618;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (min-width: 900px) and (max-width: 1000px) {
-    .event {
-        margin: 10px;
-    }
-}
-
-@media (min-width: 320px) and (max-width: 900px) {
-    .event {
-        width: 100%;
-    }
-}
-
-.event:hover {
-    transform: scale(110%);
-    background: rgba(50, 35, 160, 0.7);
-    filter: drop-shadow(0 0 0.98rem #A9A3ff);
+/* Image Layer (Hazy state) */
+.cover {
+    grid-area: stack;
 }
 
 .cover img {
-    display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    filter: blur(12px) brightness(0.7);
+    transition: all 0.8s ease;
+}
+
+/* Content Layer (Centered state) */
+.rest {
+    grid-area: stack;
+    position: relative;
+    z-index: 2;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical Center */
+    align-items: center;     /* Horizontal Center */
+    text-align: center;
+    background: radial-gradient(circle, transparent 0%, rgba(0,0,0,0.4) 100%);
+    transition: all 0.6s ease;
 }
 
 .head {
-    font-size: 2.5em;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .time {
-    font-size: 1em;
-    color: lightgray;
-    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: #A9A3ff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(169, 163, 255, 0.4);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
-.rest {
-    padding: 10px;
+.body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-.hero-back {
-    background: url(/images/background-events.jpeg);
-    background-size: 100% auto;
-    background-position: -50%;
+/* --- HOVER EFFECTS --- */
+.event:hover {
+    transform: translateY(-15px);
+    border-color: rgba(169, 163, 255, 0.6);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
 }
+
+.event:hover .cover img {
+    opacity: 1;
+    filter: blur(0px) brightness(1);
+    transform: scale(1.05);
+}
+
+.event:hover .rest {
+    justify-content: flex-end; /* Slides text to bottom on hover */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 70%);
+}
+
+.event:hover .body {
+    color: white;
+    opacity: 1;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding-block: 3em;
+    background: #000;
+    text-align: center;
+    color: white;
+    border-top: 1px solid #1a1033;
+}
+
