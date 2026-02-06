@@ -1,6 +1,12 @@
 @import "/stylesheets/common.css";/* --- PRESERVE NAV BAR STYLE --- */
 
 /* --- PREMIUM CONTENT STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #05040e;
     color: white;

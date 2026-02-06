@@ -1,7 +1,6 @@
 @import url('/stylesheets/common.css');
-
-
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -14,79 +13,104 @@ body {
     font-family: 'Roxbrough CF', serif;
 }
 
-/* --- KEEPING YOUR ORIGINAL HEADER STYLE --- */
+/* --- 1. HERO SECTION (Aligned like Internship) --- */
 .hero-back {
-    /* Uses the same vignette to blend the image into the background */
-    background: 
-        linear-gradient(to bottom, 
-            rgba(5, 4, 14, 0.7) 0%, 
-            transparent 30%, 
-            transparent 70%, 
-            rgba(5, 4, 14, 1) 100%),
-        url('/images/background-events.jpeg');
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
     
+    /* MUST BE FLEX TO PUSH TEXT DOWN */
+    display: flex; 
+    flex-direction: column;
+    
+    background: #05040e;
+}
+
+.hero-back::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    
+    /* Put your image here */
+    background: url('/images/sky.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    min-height: 60vh;
-    display: block; /* Ensures header stays at top */
+    
+    /* The animation */
+    animation: slowZoom 20s ease-in-out infinite;
+    z-index: 1; /* Sits behind the content */
+}
+
+/* This creates the dark vignette over the moving image */
+.hero-back::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, 
+                rgba(5, 4, 14, 0.5) 0%, 
+                transparent 50%, 
+                rgba(5, 4, 14, 1) 100%);
+    z-index: 2; /* Sits between the image and the text */
+}
+
+header, .navigation-container {
+    position: relative;
+    z-index: 3;
 }
 
 header {
+    /* This 'auto' margin only works if the parent is flex */
+    margin-top: 11rem; 
+    
     margin-inline: 10%;
-    padding-top: 100px; /* Same spacing as Events */
+    padding-bottom: 60px; /* Space from the bottom edge */
     text-align: left;
-    padding-bottom: 100px;
+    position: relative;
+    z-index: 3;
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 800;
     text-transform: uppercase;
-    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(to right, #fff, #A9A3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 10px;
 }
 
 header p {
     font-family: 'Latin Modern', sans-serif;
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-top: 10px;
-    color: #A9A3ff;
-    max-width: 900px;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin-top: 1.5rem; /* Ensure no top margin is fighting the auto-push */
 }
 
-/* --- UPDATED CARD AREA --- */
+/* --- 2. BODDERY AREA (Solid Left-to-Right) --- */
 .boddery {
     padding-inline: 10%;
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 100px;
-    /* Exact same radial glow as Events page */
-    background: radial-gradient(circle at top, #1a1033 0%, #05040e 75%);
+    background: linear-gradient(to right, #05040e 0%, #1a1033 100%);
+    border-top: 1px solid rgba(169, 163, 255, 0.1);
 }
 
 main {
     display: grid;
-    /* Forces exactly 3 columns on large screens */
     grid-template-columns: repeat(3, 1fr); 
-    /* Wide spacing between cards as requested */
-    gap: 60px; 
-    justify-content: center;
+    gap: 40px; 
 }
 
-/* Responsive adjustments to maintain look on smaller screens */
-@media (max-width: 1200px) {
-    main { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-}
-@media (max-width: 768px) {
-    main { grid-template-columns: 1fr; }
-    .boddery { padding-inline: 5%; }
-}
-
-/* --- THE EVENT CARD --- */
+/* --- 3. EVENT CARD (Images & Hover Restored) --- */
 .event {
     position: relative;
     display: grid;
-    grid-template-areas: "stack";
+    grid-template-areas: "stack"; 
     height: 420px; 
     border-radius: 24px;
     overflow: hidden;
@@ -95,7 +119,7 @@ main {
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Image Layer (Hazy state) */
+/* Image Layer */
 .cover {
     grid-area: stack;
 }
@@ -109,7 +133,7 @@ main {
     transition: all 0.8s ease;
 }
 
-/* Content Layer (Centered state) */
+/* Content Layer */
 .rest {
     grid-area: stack;
     position: relative;
@@ -117,11 +141,28 @@ main {
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertical Center */
-    align-items: center;     /* Horizontal Center */
+    justify-content: center; /* Initial center alignment */
+    align-items: center;
     text-align: center;
     background: radial-gradient(circle, transparent 0%, rgba(0,0,0,0.4) 100%);
     transition: all 0.6s ease;
+}
+
+/* Hover Effects */
+.event:hover {
+    transform: translateY(-15px);
+    border-color: rgba(169, 163, 255, 0.6);
+}
+
+.event:hover .cover img {
+    opacity: 1;
+    filter: blur(0px) brightness(1);
+    transform: scale(1.05);
+}
+
+.event:hover .rest {
+    justify-content: flex-end; /* Slides text to bottom on hover */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 70%);
 }
 
 .head {
@@ -129,7 +170,6 @@ main {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 12px;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .time {
@@ -153,35 +193,17 @@ main {
     overflow: hidden;
 }
 
-/* --- HOVER EFFECTS --- */
-.event:hover {
-    transform: translateY(-15px);
-    border-color: rgba(169, 163, 255, 0.6);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+/* --- 4. ANIMATIONS --- */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
 }
 
-.event:hover .cover img {
-    opacity: 1;
-    filter: blur(0px) brightness(1);
-    transform: scale(1.05);
-}
-
-.event:hover .rest {
-    justify-content: flex-end; /* Slides text to bottom on hover */
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 70%);
-}
-
-.event:hover .body {
-    color: white;
-    opacity: 1;
-}
-
-/* --- FOOTER --- */
 footer {
-    padding-block: 3em;
+    padding-block: 1em;
     background: #000;
     text-align: center;
     color: white;
     border-top: 1px solid #1a1033;
 }
-

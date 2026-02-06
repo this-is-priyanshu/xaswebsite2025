@@ -32,79 +32,7 @@ a:hover {
   text-shadow: 0 0 5px #FF8888, 0 0 10px #FF8888, 0 0 15px #FF8888;
 }
 
-.navigation-container {
-    display: flex;
-    justify-content: space-between;
-    padding-inline: 7em;
-    backdrop-filter: blur(5px) brightness(30%);
-    position:relative;
-    z-index: 5;
-}
 
-.navigation-container a {
-    text-decoration: none;
-    color: white;
-}
-
-.navigation-container img {
-    height: 70px;
-    margin-top: 26px;
-}
-
-.navigation {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    gap: 50px;
-    padding: 10px;
-}
-
-.navigation li {
-    font-size: large;
-    color: white;
-    cursor: pointer;
-    transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-.navigation > li {
-    position: relative;
-}
-
-.navigation > li:hover {
-  color: white;
-  text-shadow: 0 0 5px #FF8888, 0 0 10px #FF8888, 0 0 15px #FF8888;
-}
-
-.drop-menu {
-  display: none;
-  position: absolute;
-  top: 100%; 
-  left: 0;
-  background: rgba(0, 0, 0, 0.4);
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  min-width: 150px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-.drop-menu li {
-  padding: 8px 20px;
-  white-space: nowrap;
-  transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-.navigation > li:hover > .drop-menu {
-  display: block;
-}
-
-.drop-menu li:hover {
-  background-color: darkslategray;
-  color: white;
-  text-shadow: 0 0 5px #FF8888, 0 0 10px #FF8888, 0 0 15px #FF8888;
-}
 
 h1.xas-container {
   position: relative;

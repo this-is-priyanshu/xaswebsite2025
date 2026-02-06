@@ -50,9 +50,10 @@
     display: flex;
     justify-content: space-between;
     padding-inline: 7em;
-    backdrop-filter: blur(5px) brightness(30%);
+  
     position:relative;
     z-index: 5;
+    background-color: rgba(19, 7, 54, 0.411);
 }
 
 .navigation-container a {
@@ -61,8 +62,8 @@
 }
 
 .navigation-container img {
-    height: 80px;
-    padding-bottom: 10px;
+    height: 70px;
+    padding-top: 5px;
 }
 
 .navigation {
@@ -90,7 +91,7 @@
 
 .navigation > li:hover {
   color: white;
-  text-shadow: 0 0 5px #FF8888, 0 0 10px #FF8888, 0 0 15px #FF8888;
+  text-shadow: 0 0 5px #d988ff, 0 0 10px #d988ff, 0 0 15px #d988ff;
 }
 
 .drop-menu {
@@ -103,7 +104,7 @@
   padding: 10px 0;
   margin: 0;
   min-width: 150px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .drop-menu li {
@@ -119,7 +120,7 @@
 .drop-menu li:hover {
   background-color: darkslategray;
   color: white;
-  text-shadow: 0 0 5px #FF8888, 0 0 10px #FF8888, 0 0 15px #FF8888;
+  text-shadow: 0 0 5px #d988ff, 0 0 10px #d988ff, 0 0 15px #d988ff;
 }
 
 @media (max-width: 800px) {
