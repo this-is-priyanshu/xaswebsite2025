@@ -10,6 +10,68 @@ body {
     background-color: #05040e;
     color: white;
     font-family: 'Roxbrough CF', serif;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.menu-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hamburger {
+    display: none;
+    margin-left: auto;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    background: rgba(5, 4, 14, 0.95);
+    border: 1px solid rgba(169, 163, 255, 0.25);
+    border-radius: 16px;
+    padding: 12px 8px;
+    min-width: 210px;
+    z-index: 10;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.45);
+}
+
+.mobile-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.mobile-menu a:hover {
+    background: rgba(169, 163, 255, 0.2);
 }
 
 /* --- 1. HERO SECTION (Static Header + Moving BG) --- */
@@ -60,6 +122,7 @@ header {
     padding: 0 10% 60px;
     position: relative;
     z-index: 3;
+    width: 100%;
 }
 
 header h1 {
@@ -68,6 +131,12 @@ header h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
+}
+
+header p {
+    max-width: 60ch;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 /* --- 2. CONTENT AREA --- */
@@ -171,6 +240,11 @@ header h1 {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .photo-wrap img {
     width: 100%;
     height: 100%;
@@ -215,4 +289,141 @@ footer {
     background: #000;
     text-align: center;
     border-top: 1px solid #1a1033;
+}
+
+@media (max-width: 1100px) {
+    header {
+        margin-top: 9rem;
+        padding: 0 8% 50px;
+    }
+
+    header h1 {
+        font-size: 4rem;
+    }
+
+    .boddery {
+        padding: 70px 8%;
+    }
+
+    .member-card.prominent .photo-wrap {
+        width: 280px;
+        height: 280px;
+    }
+
+    .core-grid .member-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 800px) {
+    .hero-back {
+        min-height: 50vh;
+    }
+
+    .hamburger {
+        display: inline-flex;
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu-toggle:checked ~ .mobile-menu {
+        display: block;
+    }
+
+    header {
+        margin-top: 7rem;
+        padding: 0 6% 40px;
+    }
+
+    header h1 {
+        font-size: 3.2rem;
+    }
+
+    header p {
+        font-size: 1.05rem;
+    }
+
+    .boddery {
+        padding: 60px 6%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 32px;
+    }
+
+    .secretariat-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+
+    .member-card.prominent {
+        padding: 40px 24px;
+        border-radius: 28px;
+    }
+
+    .member-card.prominent .photo-wrap {
+        width: 240px;
+        height: 240px;
+        margin-bottom: 24px;
+    }
+
+    .core-grid {
+        gap: 28px;
+    }
+
+    .core-grid .member-card {
+        width: 100%;
+        min-width: 0;
+        padding: 28px 22px;
+        border-radius: 24px;
+    }
+
+    .member-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .role {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        margin-top: 6rem;
+        padding: 0 5% 32px;
+    }
+
+    header h1 {
+        font-size: 2.6rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .boddery {
+        padding: 50px 5%;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+
+    .member-card.prominent .photo-wrap {
+        width: 200px;
+        height: 200px;
+    }
 }
