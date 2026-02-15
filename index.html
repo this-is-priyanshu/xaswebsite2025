@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Xaverian Astronomical Society</title>
+        <script src='js/navbar.js'></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="stylesheets/index.css">
 		<style>
@@ -38,23 +39,7 @@
 	<main>
 		<canvas id="can"></canvas>
 
-	<nav class='navigation-container'>
-    <a href="index.html" class="logo-link">
-        <img src="images/xas.png" alt="XAS Home">
-    </a>
-
-   <ul class="navigation">
-        <a href="about.html"><li>About Us</li></a>
-        <a href='events.html'><li>Events</li></a>
-        <li class="submenu">Activities
-            <ul class="drop-menu">
-                <a href='research.html'><li>Research</li></a>
-                <a href='intern.html'><li>Internship Resources</li></a>
-            </ul>
-        </li>
-        <li>FELO</li>
-    </ul>
-	</nav>
+        <xas-navbar></xas-navbar>
 
 		<h1 class="xas-wrapper">
     <div class="xas-container">

@@ -252,9 +252,11 @@ footer p {
     overflow-x: hidden;
   }
 
+  /*
   .navigation, .hamburger {
     display: none;
   }
+  */
 
   .navigation-container {
     padding-left: 15px;
