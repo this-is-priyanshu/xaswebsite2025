@@ -35,7 +35,7 @@ body {
     height: 100%;
     
     /* Put your image here */
-    background: url('/images/sky.png');
+    background: url('../images/sky.png');
     background-size: cover;
     background-position: center;
     
