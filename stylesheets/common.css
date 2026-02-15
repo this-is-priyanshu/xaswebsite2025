@@ -94,6 +94,18 @@
   text-shadow: 0 0 5px #d988ff, 0 0 10px #d988ff, 0 0 15px #d988ff;
 }
 
+.navigation a:hover,
+.navigation a:focus-visible {
+  color: white;
+  text-shadow: 0 0 5px #d988ff, 0 0 10px #d988ff, 0 0 15px #d988ff;
+}
+
+.navigation a:hover li,
+.navigation a:focus-visible li {
+  color: white;
+  text-shadow: 0 0 5px #d988ff, 0 0 10px #d988ff, 0 0 15px #d988ff;
+}
+
 .drop-menu {
   display: none;
   position: absolute;
