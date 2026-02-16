@@ -17,7 +17,7 @@ body {
 .hero-back {
     position: relative;
     overflow: hidden;
-    min-height: 60vh;
+    /*min-height: 60vh;*/
     
     /* MUST BE FLEX TO PUSH TEXT DOWN */
     display: flex; 
@@ -104,6 +104,18 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 40px; 
+}
+@media (max-width: 1042px)
+{
+    main {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+@media (max-width: 800px)
+{
+    main {
+        grid-template-columns: repeat(1, 1fr); 
+    }
 }
 
 /* --- 3. EVENT CARD (Images & Hover Restored) --- */
