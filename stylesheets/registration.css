@@ -1,0 +1,244 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #05040e;
+    color: white;
+    font-family: 'Roxbrough CF', serif;
+}
+
+/* --- 1. HERO SECTION (Aligned like Internship) --- */
+.hero-back {
+    position: relative;
+    overflow: hidden;
+    /*min-height: 60vh;*/
+    
+    /* MUST BE FLEX TO PUSH TEXT DOWN */
+    display: flex; 
+    flex-direction: column;
+    
+    background: #05040e;
+}
+
+.hero-back::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    
+    /* Put your image here */
+    background: url('../images/sky.png');
+    background-size: cover;
+    background-position: center;
+    
+    /* The animation */
+    animation: slowZoom 20s ease-in-out infinite;
+    z-index: 1; /* Sits behind the content */
+}
+
+/* This creates the dark vignette over the moving image */
+.hero-back::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, 
+                rgba(5, 4, 14, 0.5) 0%, 
+                transparent 50%, 
+                rgba(5, 4, 14, 1) 100%);
+    z-index: 2; /* Sits between the image and the text */
+}
+
+header, .navigation-container {
+    position: relative;
+    z-index: 3;
+}
+
+header {
+    /* This 'auto' margin only works if the parent is flex */
+    margin-top: 11rem; 
+    
+    margin-inline: 10%;
+    padding-bottom: 60px; /* Space from the bottom edge */
+    text-align: left;
+    position: relative;
+    z-index: 3;
+}
+
+header h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fff, #A9A3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-family: 'Latin Modern', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin-top: 1.5rem; /* Ensure no top margin is fighting the auto-push */
+}
+
+/* --- 2. BODDERY AREA (Solid Left-to-Right) --- */
+.boddery {
+    padding-inline: 10%;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background: linear-gradient(to right, #05040e 0%, #1a1033 100%);
+    border-top: 1px solid rgba(169, 163, 255, 0.1);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+}
+@media (max-width: 1042px)
+{
+    main {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+@media (max-width: 800px)
+{
+    main {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+
+/* --- 3. EVENT CARD (Images & Hover Restored) --- */
+.registration {
+    position: relative;
+    display: grid;
+    grid-template-areas: "stack"; 
+    height: 420px; 
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0a0618;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Image Layer */
+.cover {
+    grid-area: stack;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s ease;
+}
+
+/* Content Layer */
+.rest {
+    grid-area: stack;
+    position: relative;
+    z-index: 2;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Initial center alignment */
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, transparent 0%, rgba(0,0,0,0.4) 100%);
+    transition: all 0.6s ease;
+    opacity: 0;
+    height: inherit;
+}
+
+.registration-name {
+    grid-area: stack;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    font-size: 1.3em;
+    padding: 40px 30px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+    height: fit-content;
+    opacity: 1;
+    transition: all 0.2s ease;
+	text-decoration: underline;
+}
+
+/* Hover Effects */
+.registration:hover {
+    transform: translateY(-15px);
+    border-color: rgba(169, 163, 255, 0.6);
+}
+
+
+.registration:hover .cover img {
+    opacity: 0.35;
+    filter: blur(12px) brightness(0.7);
+    transform: scale(1.05);
+}
+
+.registration:hover .rest {
+    /*justify-content: flex-end;*/
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 70%);
+    opacity: 1;
+}
+
+.registration:hover .registration-name {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+
+.head {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.login {
+    font-size: 0.85rem;
+    color: #A9A3ff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(169, 163, 255, 0.4);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+	text-decoration: none;
+}
+
+.body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- 4. ANIMATIONS --- */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+footer {
+    padding-block: 1em;
+    background: #000;
+    text-align: center;
+    color: white;
+    border-top: 1px solid #1a1033;
+}
