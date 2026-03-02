@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Xaverian Astronomical Society</title>
+        <script src='js/navbar.js'></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="stylesheets/index.css">
 		<style>
@@ -38,38 +39,7 @@
 	<main>
 		<canvas id="can"></canvas>
 
-	<nav class='navigation-container'>
-    <a href="index.html" class="logo-link">
-        <img src="images/xas.png" alt="XAS Home">
-    </a>
-
-	<input type="checkbox" id="mobile-menu-toggle" class="menu-toggle">
-	<label for="mobile-menu-toggle" class="hamburger" aria-label="Open menu">
-		<span></span>
-		<span></span>
-		<span></span>
-	</label>
-
-   <ul class="navigation">
-        <a href="about.html"><li>About Us</li></a>
-        <a href='events.html'><li>Events</li></a>
-        <li class="submenu">Activities
-            <ul class="drop-menu">
-                <a href='research.html'><li>Research</li></a>
-                <a href='intern.html'><li>Internship Resources</li></a>
-            </ul>
-        </li>
-        <li>FELO</li>
-    </ul>
-
-	<div class="mobile-menu">
-		<a href="/about.html">About Us</a>
-		<a href="/events.html">Events</a>
-		<a href="/research.html">Research</a>
-		<a href="/intern.html">Internship Resources</a>
-		<a href="#">FELO</a>
-	</div>
-	</nav>
+        <xas-navbar></xas-navbar>
 
 		<h1 class="xas-wrapper">
     <div class="xas-container">
@@ -130,21 +100,9 @@
 		<div class="event-container">
 			<div class="card item-1">
 				<img src="images/galaxy.jpg" alt="Event 1">
-				<h3>Event Name 1</h3>
+				<h3><a style="color: inherit;" href="/registration.html">Event Name 1</a></h3>
 				<h4>Event Date and Time</h4>
 				<p>Details about the first event. This event is very cool, idk what else to write here lol</p>
-			</div>
-			<div class="card item-2">
-				<img src="images/space.jpg" alt="Event 2">
-				<h3>Event Name 2</h3>
-				<h4>Event Date and Time</h4>
-				<p>Details about the second event. This event is very cool, idk what else to write here lol</p>
-			</div>
-			<div class="card item-3">
-				<img src="images/telescope.jpg" alt="Event 3">
-				<h3>Event Name 3</h3>
-				<h4>Event Date and Time</h4>
-				<p>Details about the third event. This event is very cool, idk what else to write here lol</p>
 			</div>
 		</div>
 	</main>
