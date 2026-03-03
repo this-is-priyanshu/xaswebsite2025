@@ -306,6 +306,26 @@ footer {
         min-height: 50vh;
     }
 
+    .hamburger {
+        display: inline-flex;
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu-toggle:checked ~ .mobile-menu {
+        display: block;
+    }
+
     header {
         margin-top: 7rem;
         padding: 0 6% 40px;
